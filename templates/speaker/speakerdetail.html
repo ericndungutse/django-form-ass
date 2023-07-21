@@ -1,44 +1,52 @@
 <!--prettier-ignore-->
 {% extends 'base.html' %}
-{% block title %}
-    Speaker details
-{% endblock %}
-
 {%block content %}
-<h1>SPEAKER DETAIL</h1>
+<div class="card w-75" style="margin: auto; padding-bottom: 15px">
+  <h3 class="card-header display-6 fs-3 fw-light">
+    <small class="fs-2 fw-normal">Name</small>: {{speaker.name}}
+  </h3>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Name</th>
-      <th scope="col">Biography</th>
-      <th scope="col">Photo</th>
-      <th scope="col">E_mail</th>
-      <th scope="col">Phone number</th>
-      <th scope="col">linkedin</th>
-      <th scope="col">Twitter</th>
-      <th scope="col">Instagram</th>
-    </tr>
-  </thead>
-  <tbody>
-    <!--prettier-ignore-->
-    
-    <tr>
-      <th scope="row">{{speaker.id}}</th>
-      <td style="max-width: 300px">{{speaker.name}}</td>
-      <td style="max-width: 100px">{{speaker.biography}}</td>
-      <td>{{speaker.photo}}</td>
-      <td>{{speaker.email}}</td>
-      <td>{{speaker.phone_number}}</td>
-      <td>{{speaker.linkedin}}</td>
-      <td>{{speaker.twitter}}</td>
-      <td>{{speaker.instagram}}</td>
-    </tr>
-    <!--prettier-ignore-->
-    
-  </tbody>
-</table>
+  <div class="card-body container">
+    <div>
+      <h5 class="card-title">Biography</h5>
+      <p class="lead">{{speaker.biography}}</p>
+    </div>
+
+    <br />
+
+    <div class="row text-center">
+      <div class="col">
+        <h5 class="card-title">Email</h5>
+        <p class="lead">{{speaker.email}}</p>
+      </div>
+
+      <div class="col">
+        <h5 class="card-title">Phone Number</h5>
+        <p class="lead">{{speaker.phone_number}}</p>
+      </div>
+
+    </div>
+
+    <br />
+
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          Instagram:
+          <span class="badge rounded-pill text-bg-info"
+            >{{speaker.instagram}}</span
+          >
+        </div>
+        <div class="col">
+          Twitter :
+          <span class="badge rounded-pill text-bg-info"
+            >{{speaker.twitter}}</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!--prettier-ignore-->
 {% endblock content %}
