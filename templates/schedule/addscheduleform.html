@@ -1,0 +1,50 @@
+<!--prettier-ignore-->
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{%block content %}
+<form method="post">
+  <!--prettier-ignore-->
+
+  <form method="post">
+     <!--prettier-ignore-->
+       {% load crispy_forms_tags %}
+        <!--prettier-ignore-->
+        {% csrf_token %}
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-8">
+                    <h1 class="mt-1" align="center">Add Schedule</h1>
+                    <hr class="mt-4 mb-5">
+                    <div class="row">
+
+                        <div class="col-12">
+                            {{ form.event|as_crispy_field }}
+                        </div>
+
+                        <div class="col-6">
+                            {{ form.start_time|as_crispy_field }}
+                        </div>
+
+                        <div class="col-6">
+                            {{ form.end_time|as_crispy_field }}
+                        </div>
+                        <div class="col-6">
+                            {{ form.topic|as_crispy_field }}
+                        </div>
+                        <div class="col-6">
+                            {{ form.speaker|as_crispy_field }}
+                        </div>
+                    
+                    </div>
+                    <div class="row mb-5">
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-success w-100">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </form>
+</form>
+<!--prettier-ignore-->
+{% endblock content %}
