@@ -13,6 +13,7 @@
 *.vsix
 
 venv
+env
 
 
 ### JetBrains template
