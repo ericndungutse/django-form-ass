@@ -52,8 +52,25 @@ def total_amount_paid_for_specific_event(request, id):
     return HttpResponse('Total amount paid for event, ' + event.title + ' is ' + str(sum['amount_paid__sum']))
 
 def add_event_view(request):
-    if request.method == 'POST':
+    try:
         pass
+    except:
+        pass
+    if request.method == 'POST':
+        form = EventForm()
+        if form.is_valid:
+            newEvent = form.save(commit=False)
+            newEvent.is_free = False
+            newEvent.start_date = request.POST['start_date']
+            newEvent.category_id = int(request.POST['category'])
+            newEvent.title = request.POST['title']
+            newEvent.location = request.POST['location']
+            newEvent.description = request.POST['description']
+            newEvent.end_date = request.POST['end_date']
+            if request.POST['start_date'] == 'on':
+                newEvent.is_free = False
+            newEvent.save()
+            return render(request, 'event/successFormSubmission.html', context={"title": newEvent.title, "description":newEvent.description, "category": newEvent.category_id, "end_date": newEvent.end_date, "entrance": newEvent.is_free, "start_date": newEvent.start_date, "location": newEvent.location  })
     form = EventForm()
     context={"form": form }
     return render(request, 'event/addEventForm.html', context)
