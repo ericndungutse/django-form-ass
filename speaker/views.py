@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from speaker.models import Speaker
+from django.http import HttpResponse
 from .forms import SpeakerForm
 
 # Create your views here.
@@ -13,7 +14,12 @@ def speaker_detail( request, name):
 
 def add_speaker_form_view(request):
     if request.method == 'POST':
-        pass
+        form = SpeakerForm(request.POST)
+        form.save()
+        if form.is_valid:
+            return HttpResponse('Speaker added')
+        else:
+            return HttpResponse('not valid')
     else:
         form = SpeakerForm()
         context={"form": form }
