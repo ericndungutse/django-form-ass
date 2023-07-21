@@ -1,0 +1,42 @@
+<!--prettier-ignore-->
+{% extends 'base.html' %}
+{% block title %}
+    All speakers
+{% endblock %}
+
+{%block content %}
+<h1>ALL SPEAKER'S</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">E_mail</th>
+      <th scope="col">Phone number</th> 
+      <th scope="col">Action</th> 
+    </tr>
+  </thead>
+  <tbody>
+    <!--prettier-ignore-->
+    {% for speaker in speaker %}
+    <tr>
+      <th scope="row">{{speaker.id}}</th>
+      <td style="max-width: 300px">{{speaker.name}}</td>
+      <td>{{speaker.email}}</td>
+      <td>{{speaker.phone_number}}</td>
+      <td>
+        <a
+          href="/speakers/{{speaker.name}}"
+          class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+          >Details</a
+        >
+      </td>
+    </tr>
+    <!--prettier-ignore-->
+    {% endfor %}
+  </tbody>
+</table>
+
+<!--prettier-ignore-->
+{% endblock content %}

@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 98%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.logo {
+  display: inline-block;
+  font-size: 26px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navigation {
+  display: flex;
+  padding: 25px 0;
+  gap: 20px;
+}
+
+.nav-link {
+  transition: all 0.2s;
+  backface-visibility: visible;
+}
+
+.nav-link:hover {
+  transform: scale(1.2);
+}
+
+.events-title {
+  border-bottom: 1px solid #e6e6e6;
+  padding: 15px;
+  text-align: center;
+  margin-bottom: 35px;
+}

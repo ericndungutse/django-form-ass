@@ -1,0 +1,52 @@
+<!--prettier-ignore-->
+{% extends 'base.html' %}
+  {% block title %}
+      All events
+  {% endblock %}
+{%block content %}
+
+<a href="/events/add-event" class="btn btn-primary text-white"
+  ><ion-icon name="add-circle"></ion-icon> Add Event
+</a>
+
+<h2 class="events-title text-primary">Events</h2>
+
+<table class="table">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">Location</th>
+      <th scope="col">Entrance</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!--prettier-ignore-->
+    {% for event in events %}
+    <tr>
+      <th scope="row">{{event.id}}</th>
+      <td style="max-width: 150px">{{event.title}}</td>
+      <td style="max-width: 100px">{{event.location}}</td>
+
+      {% if event.is_free %}
+      <td>Free</td>
+      {% else %}
+      <td>Paid</td>
+      {% endif %}
+
+      <td>
+        <a
+          href="/events/{{event.title}}"
+          class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+          >Details</a
+        >
+      </td>
+    </tr>
+    <!--prettier-ignore-->
+    {% endfor %}
+  </tbody>
+</table>
+
+<!--prettier-ignore-->
+{% endblock content %}

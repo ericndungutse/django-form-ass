@@ -1,0 +1,44 @@
+<!--prettier-ignore-->
+{% extends 'base.html' %}
+{% block title %}
+    Speaker details
+{% endblock %}
+
+{%block content %}
+<h1>SPEAKER DETAIL</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Biography</th>
+      <th scope="col">Photo</th>
+      <th scope="col">E_mail</th>
+      <th scope="col">Phone number</th>
+      <th scope="col">linkedin</th>
+      <th scope="col">Twitter</th>
+      <th scope="col">Instagram</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!--prettier-ignore-->
+    
+    <tr>
+      <th scope="row">{{speaker.id}}</th>
+      <td style="max-width: 300px">{{speaker.name}}</td>
+      <td style="max-width: 100px">{{speaker.biography}}</td>
+      <td>{{speaker.photo}}</td>
+      <td>{{speaker.email}}</td>
+      <td>{{speaker.phone_number}}</td>
+      <td>{{speaker.linkedin}}</td>
+      <td>{{speaker.twitter}}</td>
+      <td>{{speaker.instagram}}</td>
+    </tr>
+    <!--prettier-ignore-->
+    
+  </tbody>
+</table>
+
+<!--prettier-ignore-->
+{% endblock content %}

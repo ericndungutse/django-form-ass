@@ -1,0 +1,56 @@
+<!--prettier-ignore-->
+{% extends 'base.html' %}
+{%block content %}
+<div class="card w-75" style="margin: auto; padding-bottom: 15px">
+  <h3 class="card-header display-6 fs-3 fw-light bg-primary text-white">
+    <small class="fs-2 fw-normal">Title</small>: {{event.title}}
+  </h3>
+
+  <div class="card-body container">
+    <div>
+      <h5 class="card-title">Description</h5>
+      <p class="lead">{{event.description}}</p>
+    </div>
+
+    <br />
+
+    <div class="row text-center">
+      <div class="col">
+        <h5 class="card-title">Location</h5>
+        <p class="lead">{{event.location}}</p>
+      </div>
+
+      <div class="col">
+        <h5 class="card-title">Category</h5>
+        <p class="lead">{{event.category}}</p>
+      </div>
+
+      <div class="col">
+        <h5 class="card-title">Entrance</h5>
+        {% if event.is_free %}
+        <span class="badge badge-info">Free</span>
+        {% else %}
+        <span class="badge badge-info">Paid</span>
+        {% endif %}
+      </div>
+    </div>
+
+    <br />
+
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          Starts on:
+          <span class="badge badge-warning">{{event.start_date}}</span>
+        </div>
+        <div class="col">
+          Ends on :
+          <span class="badge badge-warning">{{event.end_date}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--prettier-ignore-->
+{% endblock content %}

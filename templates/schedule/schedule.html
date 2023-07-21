@@ -1,0 +1,36 @@
+<!--prettier-ignore-->
+{% extends 'base.html' %}
+{%block content %}
+<h1>Schedules</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Topic</th>
+      <th scope="col">Event</th>
+      <th scope="col">Speaker</th>
+      <th scope="col">Starts at</th>
+      <th scope="col">Ends at</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!--prettier-ignore-->
+
+    
+    {% for schedule in schedules %}
+    <tr>
+      <th scope="row">{{schedule.id}}</th>
+      <td>{{schedule.topic}}</td>
+      <td>{{schedule.event}}</td>
+      <td>{{schedule.speaker}}</td>
+      <td>{{schedule.start_time}}</td>
+      <td>{{schedule.end_time}}</td>
+    </tr>
+    <!--prettier-ignore-->
+    {% endfor %}
+  </tbody>
+</table>
+
+<!--prettier-ignore-->
+{% endblock content %}

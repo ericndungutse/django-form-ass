@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{%block content %}
+<h1>PAYMENTS</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">participant </th>
+      <th scope="col">event</th>
+      <th scope="col">amount_paid </th>
+      <th scope ="col">payment_method</th>
+      <th scope="col">payment_date</th>
+      <th scope="col">transaction_id</th>
+      <th scope="col"> payment_status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!--prettier-ignore-->
+    {% for i in payments %}
+    <tr>
+      <th scope="row">{{i.id}}</th>
+      <td style="max-width: 300px">{{i.participant}}</td>
+      <td style="max-width: 100px">{{i.event}}</td>
+      <td>{{i.amount_paid}}</td>
+      <td>{{i.payment_method}}</td>
+      <td>{{i.payment_date}}</td>
+      <td>{{i.transaction_id}}</td>
+      <td>{{i.payment_status}}</td>
+    </tr>
+    <!--prettier-ignore-->
+    {% endfor %}
+  </tbody>
+</table>
+
+<!--prettier-ignore-->
+{% endblock content %}
